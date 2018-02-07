@@ -22,7 +22,7 @@ public class MyClass {
     }
 
     public static int wordCount(String line) {
-        if(line == null || line.isEmpty()){
+        if (line == null || line.isEmpty()) {
             return 0;
         }
 
@@ -32,10 +32,12 @@ public class MyClass {
 
     public static int specificWordCount(String line, String searchWord) {
         String[] words = line.split("\\s+");
+        String findMe = searchWord.toLowerCase();
         int count = 0;
 
-        for(String word : words){
-            if(word.equals(searchWord)){
+        for (String word : words) {
+            String thisWord = word.toLowerCase().trim();
+            if (thisWord.equals(findMe)) {
                 count++;
             }
         }
